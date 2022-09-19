@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'guru.qa'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    testImplementation (
+            'org.junit.jupiter:junit-jupiter:5.8.1',
+            'com.codeborne:selenide:6.7.2'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
